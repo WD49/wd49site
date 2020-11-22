@@ -1,19 +1,25 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Rowdies-Light', cursive; transition: 0.4s; }
-html, body { min-height: 100%; height: 100%;}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Rowdies-Light'; transition: 0.4s; }
+html, body { min-height: 100%; height: 100%; }
+body { padding: 5%; }
 
 /* FONTS */
 @font-face {  src: url('Rowdies/Rowdies-Regular.ttf');  font-family: 'Rowdies';  }
 @font-face {  src: url('Rowdies/Rowdies-Light.ttf');    font-family: 'Rowdies-Light';  }
 @font-face {  src: url('Rowdies/Rowdies-Bold.ttf');     font-family: 'Rowdies-Bold';  }
 
-button { border: none; outline: none; font-size: 1em; border-radius: 2px; background-color: #00703C; color: white; }
+button { border: none; outline: none; font-size: 1em; border-radius: 2px; color: white; text-transform: uppercase; }
 button:hover { cursor: pointer; }
+button .primary { background-color: #00703C; }
+button .secondary { border: 2px solid #00703C; }
 input[type = "text"] { outline-color: black; font-size: 1em; }
 
-hr { margin-top: 3%; margin-bottom: 3%; border: 2px solid darkgoldenrod; }
-h1 { letter-spacing: 0.1em; font-size: 5em; text-transform: uppercase; }
+hr { margin-top: 1%; margin-bottom: 1%; border: 2px solid white; }
+h1 { letter-spacing: 0.1em; font-size: 5em; }
 h2 { letter-spacing: 0.1em; font-size: 1.5em; margin-bottom: 1.5%; }
 h3 { letter-spacing: 0.075em; font-family: 'Rowdies-Bold'; }
+
+/* HTML, CSS, SASS, ETC. ICONS */
+.icons { display: inline-block; }
 
 .full-width { width: 100%; }
 .inline     { display: inline-block; }
@@ -34,7 +40,7 @@ h3 { letter-spacing: 0.075em; font-family: 'Rowdies-Bold'; }
 .green-font  { color: #00703C; }
 .yellow-font { color: darkgoldenrod; }
 
-/* BAGCKGROUND COLOR */
+/* BACKGROUND COLOR */
 .white-bg  { background-color: white; }
 .green-bg  { background-color: #00703C; }
 .yellow-bg { background-color: darkgoldenrod; }
@@ -43,3 +49,4 @@ h3 { letter-spacing: 0.075em; font-family: 'Rowdies-Bold'; }
    NAV BAR STYLING
    -----------------------------------------------
 */
+
