@@ -25,7 +25,7 @@ a { text-decoration: none; color: darkgoldenrod; }
 .full-width { width: 100%; }
 .inline     { display: inline-block; }
 .box-shadow { border: 1px solid #BFBFBF; box-shadow: 5px 5px 5px #aaaaaa; }
-.flex-container { display: flex; flex-wrap: wrap; }
+.flex-container { display: flex; flex-wrap: wrap; justify-content: space-around;}
 
 /* TEXT ALIGNMENT */
 .align-center { text-align: center; }
@@ -34,10 +34,11 @@ a { text-decoration: none; color: darkgoldenrod; }
 
 /* FOR ABOUT US TEXT BLOCKS WITH VERTICAL LINE */
 .left-text-block  { border-left:  2px solid grey; padding-left:  1%; }
-.right-text-block { border-right: 2px solid grey; padding-right: 1%; }
+.right-text-block { border-right:  2px solid grey; padding-right: 1%; }
 
-.left-side  { width: 50%; height: 100vh; float: left;  }
-.right-side { width: 50%; height: 100vh; float: right; }
+.left-side  { width: 50%; height: 25vh; float: left;  }
+.right-side { width: 50%; height: 25vh; float: right; }
+
 
 /* FONT COLOR */
 .black-font  { color: black; }
@@ -55,3 +56,4 @@ a { text-decoration: none; color: darkgoldenrod; }
    -----------------------------------------------
 */
 
+/* UPCOMING EVENTS STYLING */
