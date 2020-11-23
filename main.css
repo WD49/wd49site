@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Rowdies-Light'; transition: 0.4s; }
 html, body { min-height: 100%; height: 100%; }
-body { padding: 5%; background-color: #1c1d1c; }
+body { padding: 5%; background-color: #1c1d1c; color: white; }
 
 /* FONTS */
 @font-face {  src: url('Rowdies/Rowdies-Regular.ttf');  font-family: 'Rowdies';  }
