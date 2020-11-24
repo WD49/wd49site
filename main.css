@@ -56,12 +56,12 @@ a { text-decoration: none; color: darkgoldenrod; }
 .black-font  { color: black; }
 .white-font  { color: white; }
 .green-font  { color: #5eb63a; }
-.yellow-font { color: darkgoldenrod; }
+.yellow-font { color: #baa141; }
 
 /* BACKGROUND COLOR */
 .white-bg  { background-color: white; }
 .green-bg  { background-color: #5eb63a; }
-.yellow-bg { background-color: darkgoldenrod; }
+.yellow-bg { background-color: #baa141; }
 
 /* -----------------------------------------------
    NAV BAR STYLING
