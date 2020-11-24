@@ -13,7 +13,7 @@ button .primary { background-color: #00703C; }
 button .secondary { border: 2px solid #00703C; }
 input[type = "text"] { outline-color: black; font-size: 1em; }
 
-hr { margin-top: 1%; margin-bottom: 1%; border: 2px solid white; }
+hr { margin-top: 1%; margin-bottom: 1%; border: 2px solid white; width: 10%; }
 h1 { letter-spacing: 0.1em; font-size: 5em; }
 h2 { letter-spacing: 0.1em; font-size: 1.5em; margin-bottom: 1.5%; }
 h3 { letter-spacing: 0.075em; font-family: 'Rowdies-Bold'; }
