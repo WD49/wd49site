@@ -7,22 +7,22 @@ const events = [
 
 const projects = [
     { title: 'Example Project One', img: './exProject', description: 'Description of the project. Perhaps include who worked on it  and the technologies used to build this app.' },
-    { title: 'Example Project Two', img: './exProject', description: 'Description of the project. Perhaps include who worked on it  and the technologies used to build this app.' }
+    { title: 'Example Project Two', img: './exProject', description: 'Description of the project. Perhaps include who worked on it  and the technologies used to build this app.' } 
 ];
 
 $(document).ready(() => {  
     renderEvents(events);
+    renderProjects(projects);
 });
 
 
+// renders all events
 const renderEvents = eventList => {  
     eventList.forEach(event => $('#events').append(renderEvent(event)));
 }
 
-// renders one elem from eventList from template
-const renderEvent = event => {  
-    console.log('Rendering an event.');
-
+// renders one event
+const renderEvent = event => { 
     return `
         <h4 class='left-side white-font'>${ event.title }</h4>
 
@@ -41,5 +41,21 @@ const renderEvent = event => {
             <h4 class='white-font'>Where:</h4>
             <p class='white-font'>${ event.where }</p>
         </div>
+    `;
+}
+
+// renders all projects
+const renderProjects = projectList => {
+    projectList.forEach(project => $('#projects').append(renderProject(project)));
+}
+
+// renders one project
+const renderProject = project => {
+    return `
+        <h4 class='left-side white-font'>${ project.title }</h4>
+
+        <img src='${ project.img }' alt='${ project.alt }'>
+
+        <p>${ project.description }</p>
     `;
 }
