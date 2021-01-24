@@ -7,20 +7,20 @@
         <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
 
         <title>WebDev49</title>
+
+        <script src="https://use.fontawesome.com/0e9229ff22.js"></script>
     </head>
+
     <body>
-        <div id='main'>
+        <div id='main' class = "anchor">
             <h1 class='align-right'>Web<br>Dev<br>49</h1>
 
             <h2 class='align-left'>The</h2>
-            <h2 class='align-left'><span class = "yellow-font">web design</span> &</h2>
-            <h2 class='align-left green-font'>&ltdevelopment/&gt</h2>
+            <h2 class='align-left'><span class = "yellow-font">web design &</span></h2>
+            <h2 class='align-left green-font'>&lt/development&gt</h2>
             <h2 class='align-left'>org at UNC Charlotte</h2>
-
-            <div class='flex-container'>
-                <button class='primary box-shadow'>Get Involved</button>
-                <button class='secondary box-shadow'>Portfolio</button>
-            </div>
+            <button class='primary box-shadow'>Get Involved</button>
+            <button class='secondary box-shadow'>Portfolio</button>
 
             <div class='flex-container'>
                 <img src='web-dev-emojis/react.png' alt='react icon' class = "icons">
@@ -35,87 +35,90 @@
                 <img src='web-dev-emojis/sass.png' alt='sass icon' class = "icons">
                 <img src='web-dev-emojis/ts.png' alt='typescript icon' class = "icons">
             </div>
-
-            <div id='about'>
-                <h3 class='align-right white-font'>About the Club</h3>
-                <hr>
-
-                <div class='flex-container'>
-                    <p class=' left-text-block white-font left-side'>Web Dev 49 is an organization for students interested in web design and development. We work on projects together, give each other feedback, and do workshops. All levels of experience welcome!</p>
-
-                    <img class='right-side' src='./phone-art' alt='phone art'>
-                </div>
-
-                <div class='flex-container'>
-                    <img class='left-side' src='./flowChart-art' alt='flowchart art'>
-
-                    <p class='right-text-block white-font right-side align-right'>We welcome all from the novice level to the experienced level to learn/improve through the development process.</p>
-                </div>
-
-                <p>Want to learn even more? Get to know our officers!</p>
-
-                <a class='align-right' href='./view-officers.html'>View Club Officers &rarr;</a>
-            </div>
-
-            <div id='upcomingEvents'>
-                <h3 class='right side align-right'>Upcoming Events</h3>
-                <hr>
-
-                    <img class='left-side' src='./calendar-art' alt='calendar art'>
-
-                    <p class='right-side align-right'>We try to have as many events as possible throughout the year to help each member in the community grow to their full potential.</p>
-
-                    <div id='events'></div>
-
-                    <div class='left-side'></div>
-
-                    <a class='right-side align-right' href='./prev-events.html'>View all previous events &rarr;</a>
-
-            </div>
-
-            <div id='ourWork'>
-                <div id='right-side'></div>
-
-                <h3 class='right-side'>Our Work</h3>
-                <hr>
-
-                <div id='projects'></div>
-
-                <a class='right-side align-right' href='./all-projects.html'>View all projects &rarr;</a>
-            </div>
-
-            <div id='contact'>
-                <h2 class='right-side'>Contact Us</h2>
-
-                <h3 class='left-side'>Students</h3>
-
-                <p>Are you a student of UNC Charolotte and interested in joining?
-
-                Find us on NinerEngage and request to join.</p>
-
-                <a class='right-side align-right'>Niner Engage</a>
-
-                <h3 class='left-side'>Everyone Else</h3>
-
-                <p>If you're interested in becoming a partner or have an idea for a project, fill out the form and we'll be in touch within the week.</p>
-
-                <form id='msgForm'>
-                    <input type='text' placeholder='Name'>
-
-                    <input type='text' placeholder='Subject'>
-
-                    <input type='text' placeholder='Message'>
-
-                    <input type='submit' value='Send Message'>
-                </form>
-            </div>
-        </div>
+          </div>
 
 
+          <div id='about' class = "anchor">
+              <h3 class='align-left white-font'>About Us</h3>
+              <hr class = "left">
+
+              <div class='flex-container'>
+                <p class=' left-text-block white-font left-side'>Web Dev 49 is an organization for students interested in web design and development. We work on projects together, give each other feedback, and do workshops. All levels of experience welcome!<br>
+                <br>We welcome all from the novice level to the experienced level to learn/improve through the development process.<br>
+                <br>Want to learn even more? Get to know our officers!<br><br>
+                <a class='align-right left' href='./view-officers.html'>View Club Officers &rarr;</a></p>
+
+                <img class='right-side' src='./illustrations/AboutTheClub1.svg' alt='phone art'>
+              </div>
+          </div>
+
+          <div id='upcomingEvents' class = "anchor">
+              <h3 class='align-right'>Upcoming Events</h3>
+              <hr>
+
+              <div class = "flex-container">
+                  <img class='left-side' src='./illustrations/Events.svg' alt='calendar art'>
+
+                  <p class='right-text-block right-side align-right'>We try to have as many events as possible throughout the year to help each member in the community grow to their full potential.<br>
+                  <br>All events are held virtually on the meetings voice channel in the discord server. <br><br>
+                  <a href = "https://calendar.google.com/calendar/u/3?cid=d2ViZGV2NDkuY2x0QGdtYWlsLmNvbQ" target = "_blank" class = "left">View Calendar &rarr;</a></p>
+              </div>
+          </div>
+
+          <!--<div id='ourWork'>
+              <h3 class='align-left'>Our Work</h3>
+              <hr class = "left">
+
+              <div class = "flex-container"></div>
+
+              </div>
+          </div>-->
+
+          <div id='contact' class = "anchor">
+              <h3 class='align-left'>Contact Us</h2>
+              <hr class = "left">
+
+              <div class = "flex-container">
+                  <h4 class = "left-side">Students</h4>
+
+                  <div class = "left-text-block right-side">
+                      <p>Are you a student at UNC Charlotte and interested in joining?<br>
+                         Find us on <a href = "https://ninerengage.uncc.edu/organization/49erwebdev" target = "_blank" class = "middle">NinerEngage</a> and request to join.</p>
+                  </div>
+
+                  <h4 class = "left-side">Everyone Else</h4>
+
+                  <div class = "left-text-block right-side">
+                      <p>If you're interested in becoming a partner or have an idea for a project, fill out the form below & we'll be in touch shortly.</p>
+                      <form id='msgForm'>
+                        <input type='text' placeholder='Name'>
+                        <input type='text' placeholder='Subject'><br>
+                        <textarea placeholder='Message'></textarea><br>
+                        <input type='submit' value='Send Message'>
+                      </form>
+                  </div>
+              </div>
+          </div>
+
+          <div id = "navBar">
+              <a href = "#" id = "downLink" onclick = chooseAnchor()>
+              <div class = "left-side">
+                <i class="fa fa-arrow-circle-down white-font" aria-hidden="true"></i><br>
+                <p class = "white-font">--</p>
+              </div>
+              </a>
+
+              <a href = "#" id = "upLink" onclick = chooseAnchor()>
+              <div class = "right-side">
+                <i class="fa fa-arrow-circle-up white-font" aria-hidden="true"></i><br>
+                <p class = "white-font">--</p>
+              </div>
+              </a>
+          </div>
 
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-        <script src='./main.js'></script>
+        <script src='main.js'></script>
     </body>
 </html>

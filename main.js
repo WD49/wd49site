@@ -1,61 +1,31 @@
-// array of events to be rendered in #events
-const events = [
-    { title: 'Intro to Inkscape', description: 'Get an introduction to the wonderful world of vector graphic design host by inkscape community!', img: './mountain-art', alt: 'mountain art', when: '1/1/2021 5:00pm', where: 'Discord Meeting Voice channel' },
-    { title: 'Example Event', description: 'Brief description of event to give people an idea on what they\'ll learn by coming.', img: './default', alt: 'default art', when: '1/1/2021 5:00pm', where: 'DiscordMeeting Voice channel' },
-    { title: 'Example Event', description: 'Brief description of event to give people an idea on what they\'ll learn by coming.', img: './default', alt: 'default art', when: '1/1/2021 5:00pm', where: 'Discord Meeting Voice channel' } 
-];
 
-const projects = [
-    { title: 'Example Project One', img: './exProject', description: 'Description of the project. Perhaps include who worked on it  and the technologies used to build this app.' },
-    { title: 'Example Project Two', img: './exProject', description: 'Description of the project. Perhaps include who worked on it  and the technologies used to build this app.' } 
-];
-
-$(document).ready(() => {  
-    renderEvents(events);
-    renderProjects(projects);
-});
-
-
-// renders all events
-const renderEvents = eventList => {  
-    eventList.forEach(event => $('#events').append(renderEvent(event)));
+function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+        rect.top    >= 0 &&
+        rect.left   >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right  <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 }
 
-// renders one event
-const renderEvent = event => { 
-    return `
-        <h4 class='left-side white-font'>${ event.title }</h4>
+function chooseAnchor() {
+  var downAnchor, upAnchor;
 
-        <img class='right-side' src='${ event.img }' alt='${ event.alt }'>
+  var main    = document.getElementById("main");
+  var about   = document.getElementById("about");
+  var events  = document.getElementById("upcomingEvents");
+  var contact = document.getElementById("contact");
 
-        <p class='left-side'>${ event.description }</p>
+  if(isInViewport(main))    { downAnchor = "#about";   upAnchor = "#main";   }
+  if(isInViewport(about))   { downAnchor = "#upcomingEvents";  upAnchor = "#main";   }
+  if(isInViewport(events))  { downAnchor = "#contact"; upAnchor = "#about";  }
+  if(isInViewport(contact)) { downAnchor = "#contact"; upAnchor = "#events"; }
+  alert(downAnchor);
 
-        <div class='right-side'></div>
+  var downLink = document.getElementById("downLink");
+  var upLink   = document.getElementById("upLink");
 
-        <div class='left-side'>
-            <h4 class='white-font'>When:</h4>
-            <p class='white-font'>${ event.when }
-        </div>
-
-        <div class='right-side'>
-            <h4 class='white-font'>Where:</h4>
-            <p class='white-font'>${ event.where }</p>
-        </div>
-    `;
-}
-
-// renders all projects
-const renderProjects = projectList => {
-    projectList.forEach(project => $('#projects').append(renderProject(project)));
-}
-
-// renders one project
-const renderProject = project => {
-    return `
-        <h4 class='left-side white-font'>${ project.title }</h4>
-
-        <img src='${ project.img }' alt='${ project.alt }'>
-
-        <p>${ project.description }</p>
-    `;
+  downLink.href = downAnchor;
+  upLink.href   = upAnchor;
 }
