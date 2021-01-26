@@ -1,3 +1,9 @@
+:root {
+  --green: #2c7b35;
+  --gold: #c9ad48;
+  --white: #dbdbdb;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,62 +15,55 @@ html,
 body {
   min-height: 100%;
   height: 100%;
+  font-size: 16px;
 }
 body {
   background-color: #444444;
-  color: #dbdbdb;
-  margin: auto;
-  max-width: 414px;
+  color: var(--white);
   overflow-x: hidden;
-  padding-top: 32px;
+}
+main {
+  max-width: 414px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+section {
+  height: fit-content;
 }
 
 button {
   border: none;
   outline: none;
   font-size: 1em;
-  border-radius: 3px;
+  border-radius: 4px;
   color: white;
   text-transform: uppercase;
-  padding: 0.75% 2%;
-  width: auto;
-  margin-right: 2%;
-  margin-top: 3%;
-  margin-bottom: 3%;
+  padding: 8px 14px;
+  margin: 2rem 0px;
+  font-size: 1.25rem;
+  transition: background-color linear 100ms, box-shadow linear 100ms;
+  flex: 1;
 }
 button:hover {
   cursor: pointer;
 }
+button:focus {
+  box-shadow: 0px 0px 0px 3px #3ef153;
+}
 .primary {
-  background-color: #5eb63a;
+  background-color: var(--green);
+}
+button.primary:hover {
+  background-color: #216829;
 }
 .secondary {
-  border: 2px solid #5eb63a;
-  background-color: #444444;
+  border: 2px solid var(--green);
+  background-color: transparent;
 }
-input[type="text"],
-textarea {
-  outline-color: black;
-  font-size: 1em;
-  width: 44.5%;
-  padding: 1%;
-}
-textarea {
-  width: 91.25%;
-}
-input[type="text"]:first-child {
-  margin-right: 1.5%;
-}
-input[type="submit"] {
-  padding: 1%;
-  margin-top: 1.5%;
-  width: 16%;
-}
-input {
-  margin-bottom: 2%;
-}
-form {
-  margin-top: 2%;
+button.secondary:hover {
+  background-color: #00000032;
 }
 
 .left {
@@ -73,42 +72,66 @@ form {
 hr {
   margin-top: 0.5%;
   margin-bottom: 0.5%;
-  border: 1px solid #dbdbdb;
+  border: 1px solid var(--white);
   width: 10%;
   margin-left: 90%;
 }
+/* A neat tool to help pick font size: https://type-scale.com/?size=16&scale=1.250&text=A%20Visual%20Type%20Scale&font=Rowdies&fontweight=300&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false */
 h1 {
   letter-spacing: 0.2em;
-  /* font-size: 5rem; */
+  font-size: 3.052rem;
 }
 h2 {
-  letter-spacing: 0.2em;
-  /* font-size: 2rem; */
+  letter-spacing: 4px;
+  font-size: 2.441rem;
   margin-bottom: 1.5%;
 }
 h3 {
   letter-spacing: 0.1em;
+  font-size: 1.953rem;
 }
 h4 {
   margin-bottom: 2%;
+  font-size: 1.563rem;
+  letter-spacing: 1px;
+}
+h5 {
+  font-size: 1.25rem;
+}
+p,
+a,
+label,
+span {
+  font-size: 1rem;
 }
 a {
   text-decoration: none;
-  color: darkgoldenrod;
+  color: var(--gold);
 }
 /* watermark */
 #main h1 {
-  position: fixed;
-  top: 10%;
-  right: 10%;
+  top: 1px;
+  right: 1px;
   color: #4b4b4b;
   text-transform: uppercase;
   font-size: 7em;
   z-index: -1;
+  line-height: 7rem;
+}
+#main .main-title {
+  margin-top: -3rem;
+}
+#main > p {
+  font-size: 1.25rem;
+}
+#main .button-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 12px;
 }
 #set-pwidth {
-  width: 60%;
-  margin-left: 20%;
+  padding: 0px 10px;
+  margin: auto;
 } /* for paragraph between icons */
 
 /* HTML, CSS, SASS, ETC. ICONS */
@@ -124,7 +147,7 @@ a {
   display: inline-block;
 }
 .box-shadow {
-  box-shadow: 2px 2px 2px #3c3c3c;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
 .flex-container {
   display: flex;
@@ -159,7 +182,6 @@ a {
 
 .left-side {
   width: 50%;
-  height: 25vh;
   float: left;
 }
 .right-side {
@@ -173,13 +195,13 @@ a {
   color: black;
 }
 .white-font {
-  color: #dbdbdb;
+  color: var(--white);
 }
 .green-font {
-  color: #5eb63a;
+  color: #48c957; /* light green for accessability */
 }
 .yellow-font {
-  color: darkgoldenrod;
+  color: var(--gold);
 }
 
 /* BACKGROUND COLOR */
@@ -190,7 +212,7 @@ a {
   background-color: #5eb63a;
 }
 .yellow-bg {
-  background-color: darkgoldenrod;
+  background-color: var(--gold);
 }
 
 #contact .right-side {
@@ -247,7 +269,7 @@ a.middle:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: darkgoldenrod;
+  background-color: var(--gold);
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.4s ease-in-out;
@@ -269,7 +291,7 @@ a.left:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: darkgoldenrod;
+  background-color: var(--gold);
   visibility: hidden;
   transition: all 0.4s ease-in-out;
 }
@@ -281,23 +303,27 @@ a.left:hover:before {
 
 /* Our work section */
 section#ourWork {
-  margin: 5rem 0;
   display: flex;
   gap: 24px;
   flex-direction: column;
 }
 /* remove default styles */
-section#ourWork hr {
+section#ourWork hr,
+section#contact hr {
   margin: 0;
-  border: 1px inset;
+  border: none;
+  height: 1px;
+  background: var(--white);
 }
-#ourWork div:first-child {
+#ourWork div:first-child,
+#contact div:first-child {
   margin-left: auto;
   width: -moz-fit-content;
   width: fit-content;
   position: relative; /* relative to accomodate the absolute positioned <hr/> */
 }
-#ourWork div:first-child > hr {
+#ourWork div:first-child > hr,
+#contact div:first-child > hr {
   width: 75%;
   position: absolute;
   /* the right side of the text isn't flush so push this out a little to better align with text */
@@ -313,8 +339,74 @@ section#ourWork hr {
   width: 70%;
 }
 .club-project > hr {
-  width: 30%;
+  width: 50%;
 }
 .club-project > p {
   font-weight: normal;
+}
+
+/* Contact Us Section */
+.contact-content > hr:first-of-type {
+  width: 25%;
+}
+.contact-content > hr:last-of-type {
+  width: 40%;
+}
+.contact-content > p {
+  margin-top: 18px;
+}
+.contact-content > h4 {
+  margin-top: 32px;
+}
+
+form#contactForm {
+  margin-top: 32px;
+  display: grid;
+  column-gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "nameLabel subjectLabel"
+    "nameInput subjectInput"
+    "messageLabel messageLabel"
+    "messageInput messageInput"
+    "submitBtn submitBtn";
+}
+#contactForm label {
+  margin-top: 12px;
+}
+label[for="name"] {
+  grid-area: nameLabel;
+}
+label[for="subject"] {
+  grid-area: subjectLabel;
+}
+label[for="message"] {
+  grid-area: messageLabel;
+}
+input:not([type="submit"]),
+textarea {
+  background-color: #232323;
+  border: none;
+  border-bottom: 2px solid var(--gold);
+  padding: 6px 8px;
+  border-radius: 4px 4px 0px 0px;
+  color: var(--white);
+}
+input#name {
+  grid-area: nameInput;
+  width: 100%;
+}
+input#subject {
+  grid-area: subjectInput;
+  width: 100%;
+}
+textarea#message {
+  grid-area: messageInput;
+  width: 100%;
+}
+
+form > button {
+  grid-area: submitBtn;
+  margin: 12px 0;
+  font-size: 1rem;
 }
