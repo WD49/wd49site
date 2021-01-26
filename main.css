@@ -29,10 +29,6 @@ main {
   flex-direction: column;
   gap: 5rem;
 }
-section {
-  height: fit-content;
-}
-
 button {
   border: none;
   outline: none;
