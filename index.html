@@ -3,11 +3,10 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel='stylesheet' href='./main.css'>
+      <title>WebDev49</title>
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
-      <title>WebDev49</title>
-      <script src="https://use.fontawesome.com/0e9229ff22.js"></script>
+      <link rel='stylesheet' href='./main.css'>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="./plugins/jquery.scrollTo.min.js"></script>
       <script src="./plugins/jquery.visible.min.js"></script>
@@ -16,6 +15,13 @@
   </head>
 
   <body>
+    <aside>
+      <nav id="accessibility-menu">
+        <ul>
+          <li><button tabindex="0" onclick="document.getElementById('downLink').focus()">Skip to navigation</button></li>
+        </ul>
+      </nav>
+    </aside>
     <main>
       <section id='main'>
         <h1 class='club-name-header'>Web<br>Dev<br>49</h1>
@@ -105,11 +111,23 @@
     
     <nav id="navBar">
       <button id="downLink">
-        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+          <g id="Icon_feather-arrow-down-circle" data-name="Icon feather-arrow-down-circle" transform="translate(-1.5 -1.5)">
+            <path id="Path_193" data-name="Path 193" d="M33,18A15,15,0,1,1,18,3,15,15,0,0,1,33,18Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            <path id="Path_194" data-name="Path 194" d="M12,18l6,6,6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            <path id="Path_195" data-name="Path 195" d="M18,12V24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          </g>
+        </svg>
         <p id="downLinkText">--</p>
       </button>
       <button id="upLink">
-        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+          <g id="Icon_feather-arrow-up-circle" data-name="Icon feather-arrow-up-circle" transform="translate(-1.5 -1.5)">
+            <path id="Path_196" data-name="Path 196" d="M33,18A15,15,0,1,1,18,3,15,15,0,0,1,33,18Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            <path id="Path_197" data-name="Path 197" d="M24,18l-6-6-6,6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            <path id="Path_198" data-name="Path 198" d="M18,24V12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          </g>
+        </svg>
         <p id="upLinkText">--</p>
       </button>
     </nav>
