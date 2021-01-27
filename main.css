@@ -2,14 +2,21 @@
 :root {
   --green: #2c7b35;
   --light-green: #48c957;
-  --gold: #c9ad48;
+  --gold: #ffd952;
   --white: #dbdbdb;
+}
+@font-face {
+  font-family: "Rowdies";
+  font-display: swap;
+  src: url("./fonts/Rowdies-Bold.ttf");
+  src: url("./fonts/Rowdies-Light.ttf");
+  src: url("./fonts/Rowdies-Regular.ttf");
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Rowdies", sans-serif, cursive;
+  font-family: "Rowdies", cursive;
 }
 html,
 body {
