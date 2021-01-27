@@ -1,77 +1,30 @@
+/* Global Setup */
 :root {
   --green: #2c7b35;
+  --light-green: #48c957;
   --gold: #c9ad48;
   --white: #dbdbdb;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Rowdies", cursive;
-  /* transition: 0.4s; */
+  font-family: "Rowdies", sans-serif, cursive;
 }
 html,
 body {
   min-height: 100%;
   height: 100%;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 body {
   background-color: #444444;
   color: var(--white);
   overflow-x: hidden;
 }
-main {
-  max-width: 414px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-button {
-  border: none;
-  outline: none;
-  font-size: 1em;
-  border-radius: 4px;
-  color: white;
-  text-transform: uppercase;
-  padding: 8px 14px;
-  margin: 2rem 0px;
-  font-size: 1.25rem;
-  transition: background-color linear 100ms, box-shadow linear 100ms;
-  flex: 1;
-}
-button:hover {
-  cursor: pointer;
-}
-button:focus {
-  box-shadow: 0px 0px 0px 3px #3ef153;
-}
-.primary {
-  background-color: var(--green);
-}
-button.primary:hover {
-  background-color: #216829;
-}
-.secondary {
-  border: 2px solid var(--green);
-  background-color: transparent;
-}
-button.secondary:hover {
-  background-color: #00000032;
-}
 
-.left {
-  margin-left: 0;
-} /* for hr on left side of page */
-hr {
-  margin-top: 0.5%;
-  margin-bottom: 0.5%;
-  border: 1px solid var(--white);
-  width: 10%;
-  margin-left: 90%;
-}
+/* Font/text Setup */
 /* A neat tool to help pick font size: https://type-scale.com/?size=16&scale=1.250&text=A%20Visual%20Type%20Scale&font=Rowdies&fontweight=300&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false */
 h1 {
   letter-spacing: 0.2em;
@@ -80,7 +33,6 @@ h1 {
 h2 {
   letter-spacing: 4px;
   font-size: 2.441rem;
-  margin-bottom: 1.5%;
 }
 h3 {
   letter-spacing: 0.1em;
@@ -100,164 +52,56 @@ label,
 span {
   font-size: 1rem;
 }
+
+/* Generic element styling */
+main {
+  max-width: 414px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+/* Button styling */
+button {
+  border: none;
+  outline: none;
+  font-size: 1em;
+  border-radius: 4px;
+  color: white;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  margin: 2rem 0px;
+  font-size: 1.25rem;
+  transition: background-color linear 100ms, box-shadow linear 100ms;
+  flex: 1;
+}
+button:hover {
+  cursor: pointer;
+}
+button:focus {
+  box-shadow: 0px 0px 0px 3px var(--light-green);
+}
+button.primary {
+  background-color: var(--green);
+}
+button.primary:hover {
+  background-color: #216829;
+}
+button.secondary {
+  border: 2px solid var(--green);
+  background-color: transparent;
+}
+button.secondary:hover {
+  background-color: #00000032;
+}
+/* link styling */
 a {
   text-decoration: none;
   color: var(--gold);
 }
-/* watermark */
-#main h1 {
-  top: 1px;
-  right: 1px;
-  color: #4b4b4b;
-  text-transform: uppercase;
-  font-size: 7em;
-  z-index: -1;
-  line-height: 7rem;
-}
-#main .main-title {
-  margin-top: -3rem;
-}
-#main > p {
-  font-size: 1.25rem;
-}
-#main .button-group {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 12px;
-}
-#set-pwidth {
-  padding: 0px 10px;
-  margin: auto;
-} /* for paragraph between icons */
-
-/* HTML, CSS, SASS, ETC. ICONS */
-.icons {
-  width: 5%;
-  height: auto;
-}
-
-.full-width {
-  width: 100%;
-}
-.inline {
-  display: inline-block;
-}
-.box-shadow {
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
-}
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-/* TEXT ALIGNMENT */
-.align-center {
-  text-align: center;
-}
-.align-right {
-  text-align: right;
-}
-.align-left {
-  text-align: left;
-}
-
-/* FOR ABOUT US TEXT BLOCKS WITH VERTICAL LINE */
-.left-text-block {
-  border-left: 2px solid grey;
-  padding-left: 1%;
-  margin-bottom: 5%;
-}
-.right-text-block {
-  border-right: 2px solid grey;
-  padding-right: 1%;
-  margin-bottom: 5%;
-}
-
-.left-side {
-  width: 50%;
-  float: left;
-}
-.right-side {
-  width: 50%;
-  height: 25vh;
-  float: right;
-}
-
-/* FONT COLOR */
-.black-font {
-  color: black;
-}
-.white-font {
-  color: var(--white);
-}
-.green-font {
-  color: #48c957; /* light green for accessability */
-}
-.yellow-font {
-  color: var(--gold);
-}
-
-/* BACKGROUND COLOR */
-.white-bg {
-  background-color: white;
-}
-.green-bg {
-  background-color: #5eb63a;
-}
-.yellow-bg {
-  background-color: var(--gold);
-}
-
-#contact .right-side {
-  width: 75%;
-  height: auto;
-}
-#contact .left-side {
-  width: 20%;
-  height: auto;
-}
-
-/* -----------------------------------------------
-   NAV BAR STYLING
-   -----------------------------------------------
-*/
-#navBar {
-  background-color: #0f0c08;
-  height: 12vh;
-  width: 100%;
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  width: 130%;
-  margin-left: -15%;
-}
-
-#navBar .fa {
-  font-size: 2.5em;
-  margin-top: 2.5%;
-}
-
-#navBar .left-side,
-#navBar .right-side {
-  height: 12vh;
-}
-
-#navBar .left-side:hover,
-#navBar .right-side:hover {
-  background-color: #1c1d1c;
-}
-
-/* LINK ANIMATIONS */
-
 a.middle {
   position: relative;
 }
-
 a.middle:before {
   content: "";
   position: absolute;
@@ -270,16 +114,13 @@ a.middle:before {
   transform: scaleX(0);
   transition: all 0.4s ease-in-out;
 }
-
 a.middle:hover:before {
   visibility: visible;
   transform: scaleX(1);
 }
-
 a.left {
   position: relative;
 }
-
 a.left:before {
   content: "";
   position: absolute;
@@ -291,72 +132,136 @@ a.left:before {
   visibility: hidden;
   transition: all 0.4s ease-in-out;
 }
-
 a.left:hover:before {
   visibility: visible;
   width: 100%;
 }
 
-/* Our work section */
+/* generic custom classes */
+.inherit-font-size {
+  font-size: inherit;
+}
+.box-shadow {
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+.flex-container {
+  display: flex;
+}
+.flex-justify-around {
+  justify-content: space-around;
+}
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+.text-block:not(.align-right) {
+  border-left: 3px solid #646464;
+  padding-left: 12px;
+}
+.text-block.align-right {
+  border-right: 3px solid #646464;
+  padding-right: 12px;
+}
+.white-font {
+  color: var(--white);
+}
+.green-text {
+  color: var(--light-green); /* light green for accessability */
+}
+.gold-text {
+  color: var(--gold);
+}
+
+/* Section Header w/ Underline */
+.section-header {
+  width: fit-content;
+  position: relative;
+  margin-bottom: 24px;
+}
+.section-header.align-right {
+  margin-left: auto;
+}
+.section-header::after {
+  content: "";
+  height: 2px;
+  margin: 0;
+  background: var(--white);
+  position: absolute;
+  width: 75%;
+  bottom: -4px;
+  left: 0;
+}
+.section-header.align-right::after {
+  left: auto;
+  right: 0;
+}
+
+/* main section specific styles */
+#main .club-name-header {
+  top: 1px;
+  right: 1px;
+  color: #4b4b4b;
+  text-transform: uppercase;
+  font-size: 7em;
+  z-index: -1;
+  line-height: 7rem;
+  text-align: right;
+}
+#main .main-title {
+  margin-top: -3rem;
+}
+#main > p {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 18px;
+  margin: 6px 0px;
+}
+#main .button-group {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 12px;
+  margin: 18px 0px;
+}
+#main .icons {
+  height: 45px;
+}
+
+/* Our work section specific styles */
 section#ourWork {
   display: flex;
   gap: 24px;
   flex-direction: column;
 }
-/* remove default styles */
-section#ourWork hr,
-section#contact hr {
-  margin: 0;
-  border: none;
-  height: 1px;
-  background: var(--white);
+#ourWork > h3 {
+  margin-bottom: 0;
 }
-#ourWork div:first-child,
-#contact div:first-child {
-  margin-left: auto;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: relative; /* relative to accomodate the absolute positioned <hr/> */
-}
-#ourWork div:first-child > hr,
-#contact div:first-child > hr {
-  width: 75%;
-  position: absolute;
-  /* the right side of the text isn't flush so push this out a little to better align with text */
-  right: 2px;
-  margin-top: 6px;
-}
-.club-project > h4 {
+#ourWork .club-project > h4 {
   margin: 6px 0;
 }
-.club-project > img {
+#ourWork .club-project > img {
   margin: 18px auto;
   display: block;
   width: 70%;
 }
-.club-project > hr {
-  width: 50%;
-}
-.club-project > p {
+#ourWork .club-project > p {
   font-weight: normal;
 }
 
-/* Contact Us Section */
-.contact-content > hr:first-of-type {
-  width: 25%;
-}
-.contact-content > hr:last-of-type {
-  width: 40%;
-}
-.contact-content > p {
+/* Contact Us section specific styles */
+#contact .contact-content > p {
   margin-top: 18px;
 }
-.contact-content > h4 {
+#contact .contact-content > h4 {
   margin-top: 32px;
 }
 
 form#contactForm {
-  margin-top: 32px;
+  margin-top: 20px;
   display: grid;
   column-gap: 12px;
   grid-template-columns: repeat(2, 1fr);
@@ -369,24 +274,31 @@ form#contactForm {
 }
 #contactForm label {
   margin-top: 12px;
+  margin-bottom: 4px;
 }
-label[for="name"] {
+#contact label[for="name"] {
   grid-area: nameLabel;
 }
-label[for="subject"] {
+#contact label[for="subject"] {
   grid-area: subjectLabel;
 }
-label[for="message"] {
+#contact label[for="message"] {
   grid-area: messageLabel;
 }
 input:not([type="submit"]),
 textarea {
   background-color: #232323;
   border: none;
-  border-bottom: 2px solid var(--gold);
+  border-bottom: 2px solid #333;
   padding: 6px 8px;
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px;
   color: var(--white);
+  outline: none;
+  transition: box-shadow linear 100ms;
+}
+input:not([type="submit"]):focus,
+textarea:focus {
+  box-shadow: 0px 0px 0px 2px var(--gold);
 }
 input#name {
   grid-area: nameInput;
@@ -403,6 +315,44 @@ textarea#message {
 
 form > button {
   grid-area: submitBtn;
-  margin: 12px 0;
+  margin-top: 12px;
+  margin-bottom: 36px;
   font-size: 1rem;
+}
+
+/* NavBar specific styling */
+nav#navBar {
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  bottom: 0;
+}
+
+#navBar .fa {
+  font-size: 2.5em;
+}
+
+#navBar a {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#navBar button:hover:not(:disabled) {
+  background-color: #1c1d1c;
+}
+
+#navBar button {
+  margin: 0;
+  border-radius: 0;
+  background-color: #222;
+  color: var(--white);
+  box-shadow: none;
+}
+
+#navBar button:disabled {
+  color: rgb(75, 75, 75);
 }
