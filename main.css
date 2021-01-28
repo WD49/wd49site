@@ -223,17 +223,10 @@ a.left:hover:before {
 
 /* main section specific styles */
 #main .club-name-header {
-  top: 1px;
-  right: 1px;
-  color: #4b4b4b;
   text-transform: uppercase;
-  font-size: 7em;
-  z-index: -1;
+  font-size: 7rem;
   line-height: 7rem;
   text-align: right;
-}
-#main .main-title {
-  margin-top: -3rem;
 }
 #main > p {
   font-size: 1.25rem;
