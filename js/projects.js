@@ -14,8 +14,7 @@ const projectList = [
 $(() => {
   projectList.forEach((project) => {
     $("#ourWork").append(`<div class="club-project">
-      <h4>${project.title}</h4>
-      <hr class="left">
+      <h4 class="section-header">${project.title}</h4>
       <img src=${project.imgLink} alt="project image coming soon!" />
       <p>${project.description}</p>
     </div>`)

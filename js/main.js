@@ -1,31 +1,50 @@
+const sectionIds = [
+  "#main",
+  "#about",
+  "#upcomingEvents",
+  "#ourWork",
+  "#contact",
+];
+const sectionNames = [
+  "Home",
+  "About Us",
+  "Upcoming Events",
+  "Our Work",
+  "Contact Us",
+];
 
-function isInViewport(element) {
-    var rect = element.getBoundingClientRect();
-    return (
-        rect.top    >= 0 &&
-        rect.left   >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right  <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+function handleScroll() {
+  const visibleSectionIndex = sectionIds.findIndex((id) => $(id).visible(true));
+
+  if (visibleSectionIndex !== -1) {
+
+    const atBottom = $(document).scrollTop() + document.body.offsetHeight - document.body.scrollHeight >= -200;
+
+    let upSectionIndex = -1;
+    let downSectionIndex = -1;
+    
+    if (atBottom) {
+      upSectionIndex = sectionIds.length - 2;
+      downSectionIndex = sectionIds.length - 1;
+    } else {
+      upSectionIndex = visibleSectionIndex === 0 ? 0 : visibleSectionIndex - 1;
+      downSectionIndex = visibleSectionIndex === sectionIds.length - 1 ? visibleSectionIndex : visibleSectionIndex + 1;
+    }
+
+    if ($("#downLinkText").text() !== sectionNames[downLink]) {
+      $("#downLink").click(() => $.scrollTo(sectionIds[downSectionIndex]));
+      $("#downLink").attr("disabled", atBottom);
+      $("#downLinkText").text(sectionNames[downSectionIndex]);
+    }
+    if ($("#upLinkText").text() !== sectionNames[upLink]) {
+      $("#upLink").click(() => $.scrollTo(sectionIds[upSectionIndex]));
+      $("#upLink").attr("disabled", visibleSectionIndex === 0);
+      $("#upLinkText").text(sectionNames[upSectionIndex]);
+    }
+  }
 }
 
-function chooseAnchor() {
-  var downAnchor, upAnchor;
-
-  var main    = document.getElementById("main");
-  var about   = document.getElementById("about");
-  var events  = document.getElementById("upcomingEvents");
-  var contact = document.getElementById("contact");
-
-  if(isInViewport(main))    { downAnchor = "#about";   upAnchor = "#main";   }
-  if(isInViewport(about))   { downAnchor = "#upcomingEvents";  upAnchor = "#main";   }
-  if(isInViewport(events))  { downAnchor = "#contact"; upAnchor = "#about";  }
-  if(isInViewport(contact)) { downAnchor = "#contact"; upAnchor = "#events"; }
-  alert(downAnchor);
-
-  var downLink = document.getElementById("downLink");
-  var upLink   = document.getElementById("upLink");
-
-  downLink.href = downAnchor;
-  upLink.href   = upAnchor;
-}
+$(() => {
+  $(window).scroll(() => handleScroll());
+  handleScroll();
+})
