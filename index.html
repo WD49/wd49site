@@ -7,7 +7,6 @@
       <meta name="description" content="The official website for the UNC Charlotte WebDev49 Org">
       <link rel='stylesheet' href='./main.css'>
       <script src="./plugins/jquery-3.5.1.min.js"></script>
-      <script src="./plugins/jquery.scrollTo.min.js"></script>
       <script src="./plugins/jquery.visible.min.js"></script>
       <script src='./js/main.js'></script>
       <script src='./js/projects.js'></script>
@@ -22,13 +21,19 @@
       </nav>
     </aside>
     <main>
+      <div aria-hidden="true" id="art"></div>
+      <div aria-hidden="true" id="art2"></div>
       <section id='main'>
-        <h1 class='club-name-header'>Web<br>Dev<br>49</h1>
+        <h1 class='club-name-header'>
+          <p class="inherit-font-size">Web</p>
+          <p class="inherit-font-size">Dev</p>
+          <p class="inherit-font-size">49</p>
+        </h1>
           <h2>
-            The<br>
-            <span class="inherit-font-size green-text">web design &amp;<br></span>
-            <span class="inherit-font-size gold-text">&lt/development&gt<br></span>
-            org at UNC Charlotte
+            <p class="inherit-font-size">The</p>
+            <p class="inherit-font-size green-text">web design &amp;</p>
+            <p class="inherit-font-size gold-text">&ltdevelopment/&gt</p>
+            <p class="inherit-font-size">org at UNC Charlotte</p>
           </h2>
         <div class="button-group">
           <button class='primary box-shadow'>Get Involved</button>
@@ -53,7 +58,7 @@
       </section>
       
       <section id='about'>
-        <h3 class='section-header'>About Us</h3>
+        <h2 class='section-header'>About Us</h2>
 
         <div class='flex-container'>
           <p class="text-block">
@@ -66,7 +71,7 @@
       </section>
       
       <section id='upcomingEvents'>
-        <h3 class='section-header align-right'>Upcoming Events</h3>
+        <h2 class='section-header align-right'>Upcoming Events</h2>
 
         <div class = "flex-container">
           <p class='text-block align-right'>We try to have as many events as possible throughout the year to help each member in the community grow to their full potential.<br>
@@ -76,17 +81,18 @@
       </section>
       
       <section id='ourWork'>
-        <h3 class="section-header align-right">Our Work</h3>
+        <h2 class="section-header align-right">Our Work</h2>
       </section>
       
       <section id='contact'>
-        <h3 class="section-header align-right">Contact Us</h3>
+        <h2 class="section-header align-right">Contact Us</h2>
+        
         <div class="contact-content">
-          <h4 class="section-header">Students</h4>
+          <h3 class="section-header">Students</h3>
           <p>Are you a student at UNC Charlotte and interested in joining? Find us on 
             <a href = "https://ninerengage.uncc.edu/organization/49erwebdev" target = "_blank" rel="noreferrer" class = "middle">NinerEngage</a> and request to join.</p>
 
-          <h4 class="section-header">Everyone Else</h4>
+          <h3 class="section-header">Everyone Else</h3>
           <p>If you're interested in becoming a partner or have an idea for a project, fill out the form below & we'll be in touch shortly.</p>
             
           <form id='contactForm' method="POST">

@@ -1,3 +1,4 @@
+// These arrays need to be manually updated if a new section is added
 const sectionIds = [
   "#main",
   "#about",
@@ -31,13 +32,16 @@ function handleScroll() {
       downSectionIndex = visibleSectionIndex === sectionIds.length - 1 ? visibleSectionIndex : visibleSectionIndex + 1;
     }
 
+    const posDown = $(sectionIds[downSectionIndex]).offset().top;
+    const posUp = $(sectionIds[upSectionIndex]).offset().top;
+
     if ($("#downLinkText").text() !== sectionNames[downLink]) {
-      $("#downLink").click(() => $.scrollTo(sectionIds[downSectionIndex]));
+      $("#downLink").click(() => window.scrollTo(0, posDown));
       $("#downLink").attr("disabled", atBottom);
       $("#downLinkText").text(sectionNames[downSectionIndex]);
     }
     if ($("#upLinkText").text() !== sectionNames[upLink]) {
-      $("#upLink").click(() => $.scrollTo(sectionIds[upSectionIndex]));
+      $("#upLink").click(() => window.scrollTo(0, posUp));
       $("#upLink").attr("disabled", visibleSectionIndex === 0);
       $("#upLinkText").text(sectionNames[upSectionIndex]);
     }
@@ -45,6 +49,13 @@ function handleScroll() {
 }
 
 $(() => {
+  $(".club-name-header > p").each((i, pTag) => {
+    $(pTag).css({ left: "1000px" }).delay(i * 200).animate({ left: "0px" }, 900)
+  })
   $(window).scroll(() => handleScroll());
   handleScroll();
+  $("#navBar").css({ bottom: "-100px" }).delay(100).animate({ bottom: 0 }, 1000);
+
+  // navBar doesn't have a set height so calculate height on load to add space below contact form
+  $("main").css({ paddingBottom: $("#navBar").innerHeight() });
 })
