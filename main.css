@@ -82,7 +82,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  padding: 38px 18px;
+  padding: 0px 18px;
+}
+/* only apply styles if screen width is greater than 600px */
+@media only screen and (min-width: 600px) {
+  main {
+    padding: 38px 18px;
+  }
 }
 /* Button styling */
 button {
@@ -208,7 +214,6 @@ a.left:hover:before {
   width: fit-content;
   position: relative;
   margin-bottom: 24px;
-  white-space: nowrap;
 }
 .section-header.align-right {
   margin-left: auto;
@@ -242,25 +247,9 @@ a.left:hover:before {
 /* main section specific styles */
 #main {
   overflow: hidden;
-  background-color: var(--darker-bg);
-  margin: -5rem -2rem 0rem -2rem;
-  padding: 2rem;
-  padding-bottom: 5rem;
   position: relative;
-  box-shadow: 0px -12px 6px 6px rgba(0, 0, 0, 0.2);
-}
-#main::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-bottom: solid 50px var(--main-bg);
-  border-left: solid 220px transparent;
-  border-right: solid 220px transparent;
 }
 #main .club-name-header {
-  margin-top: 2rem;
   text-transform: uppercase;
   font-size: 7rem;
   line-height: 7rem;
@@ -284,7 +273,29 @@ a.left:hover:before {
 #main .icons {
   height: 45px;
 }
-
+/* only apply styles if screen width is greater than 600px */
+@media only screen and (min-width: 600px) {
+  #main {
+    background-color: var(--darker-bg);
+    margin: -5rem -2rem 0rem -2rem;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    box-shadow: 0px -12px 6px 6px rgba(0, 0, 0, 0.2);
+  }
+  #main .club-name-header {
+    margin-top: 2rem;
+  }
+  #main::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: solid 50px var(--main-bg);
+    border-left: solid 220px transparent;
+    border-right: solid 220px transparent;
+  }
+}
 /* Our work section specific styles */
 section#ourWork {
   display: flex;
