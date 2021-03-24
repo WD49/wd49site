@@ -1,9 +1,14 @@
 /* Global Setup */
 :root {
-  --green: #2c7b35;
-  --light-green: #48c957;
+  --dark-bg: #3d3d3d;
+  --darker-bg: #222;
+  --darkest-bg: #1c1d1c;
+  --font-color: #dbdbdb;
   --gold: #ffd952;
-  --white: #dbdbdb;
+  --green: #2c7b35;
+  --grey: #646464;
+  --light-green: #48c957;
+  --main-bg: #444;
 }
 @font-face {
   font-family: "Rowdies";
@@ -20,17 +25,24 @@
 }
 html,
 body {
-  min-height: 100%;
   height: 100%;
   font-size: 16px;
   scroll-behavior: smooth;
 }
 body {
-  background-color: #444444;
-  color: var(--white);
+  background-color: var(--main-bg);
+  color: var(--font-color);
   overflow-x: hidden;
 }
-
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--darker-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--grey);
+}
 /* Font/text Setup */
 /* A neat tool to help pick font size: https://type-scale.com/?size=16&scale=1.250&text=A%20Visual%20Type%20Scale&font=Rowdies&fontweight=300&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false */
 h1 {
@@ -46,7 +58,6 @@ h3 {
   font-size: 1.953rem;
 }
 h4 {
-  margin-bottom: 2%;
   font-size: 1.563rem;
   letter-spacing: 1px;
 }
@@ -56,8 +67,12 @@ h5 {
 p,
 a,
 label,
-span {
-  font-size: 1rem;
+span,
+input,
+textarea {
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 0.7px;
 }
 
 /* Generic element styling */
@@ -67,7 +82,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  padding: 38px 18px;
+  padding: 0px 18px;
+}
+/* only apply styles if screen width is greater than 600px */
+@media only screen and (min-width: 600px) {
+  main {
+    padding: 38px 18px;
+  }
 }
 /* Button styling */
 button {
@@ -148,6 +169,8 @@ a.left:hover:before {
 /* generic custom classes */
 .inherit-font-size {
   font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
 }
 .box-shadow {
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
@@ -168,15 +191,15 @@ a.left:hover:before {
   text-align: left;
 }
 .text-block:not(.align-right) {
-  border-left: 3px solid #646464;
+  border-left: 6px solid var(--grey);
   padding-left: 12px;
 }
 .text-block.align-right {
-  border-right: 3px solid #646464;
+  border-right: 6px solid var(--grey);
   padding-right: 12px;
 }
 .white-font {
-  color: var(--white);
+  color: var(--font-color);
 }
 .green-text {
   color: var(--light-green); /* light green for accessability */
@@ -199,7 +222,7 @@ a.left:hover:before {
   content: "";
   height: 2px;
   margin: 0;
-  background: var(--white);
+  background: var(--font-color);
   position: absolute;
   width: 75%;
   bottom: -4px;
@@ -217,16 +240,23 @@ a.left:hover:before {
   background-color: transparent;
 }
 #accessibility-menu button:focus {
-  color: var(--white);
+  color: var(--font-color);
   background-color: var(--green);
 }
 
 /* main section specific styles */
+#main {
+  overflow: hidden;
+  position: relative;
+}
 #main .club-name-header {
   text-transform: uppercase;
   font-size: 7rem;
   line-height: 7rem;
   text-align: right;
+}
+#main .club-name-header p {
+  position: relative;
 }
 #main > p {
   font-size: 1.25rem;
@@ -243,17 +273,39 @@ a.left:hover:before {
 #main .icons {
   height: 45px;
 }
-
+/* only apply styles if screen width is greater than 600px */
+@media only screen and (min-width: 600px) {
+  #main {
+    background-color: var(--darker-bg);
+    margin: -5rem -2rem 0rem -2rem;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    box-shadow: 0px -12px 6px 6px rgba(0, 0, 0, 0.2);
+  }
+  #main .club-name-header {
+    margin-top: 2rem;
+  }
+  #main::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: solid 50px var(--main-bg);
+    border-left: solid 220px transparent;
+    border-right: solid 220px transparent;
+  }
+}
 /* Our work section specific styles */
 section#ourWork {
   display: flex;
   gap: 24px;
   flex-direction: column;
 }
-#ourWork > h3 {
+#ourWork > h2 {
   margin-bottom: 0;
 }
-#ourWork .club-project > h4 {
+#ourWork .club-project > h3 {
   margin: 6px 0;
 }
 #ourWork .club-project > img {
@@ -266,10 +318,7 @@ section#ourWork {
 }
 
 /* Contact Us section specific styles */
-#contact .contact-content > p {
-  margin-top: 18px;
-}
-#contact .contact-content > h4 {
+#contact .contact-content > h3 {
   margin-top: 32px;
 }
 
@@ -305,7 +354,7 @@ textarea {
   border-bottom: 2px solid #333;
   padding: 6px 8px;
   border-radius: 4px;
-  color: var(--white);
+  color: var(--font-color);
   outline: none;
   transition: box-shadow linear 100ms;
 }
@@ -335,8 +384,8 @@ form > button {
 
 /* NavBar specific styling */
 nav#navBar {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   display: flex;
   bottom: 0;
 }
@@ -346,14 +395,14 @@ nav#navBar {
 }
 
 #navBar button:hover:not(:disabled) {
-  background-color: #1c1d1c;
+  background-color: var(--darkest-bg);
 }
 
 #navBar button {
   margin: 0;
   border-radius: 0;
-  background-color: #222;
-  color: var(--white);
+  background-color: var(--darker-bg);
+  color: var(--font-color);
   box-shadow: none;
 }
 
@@ -363,11 +412,32 @@ nav#navBar {
 }
 
 #navBar button:focus {
-  background-color: #1c1d1c;
-  color: var(--white);
+  background-color: var(--darkest-bg);
+  color: var(--font-color);
   box-shadow: 0px 0px 0px 3px var(--light-green) inset;
 }
 
 #navBar button:disabled {
   color: rgb(75, 75, 75);
+}
+
+/* Random art circles for pizaz */
+#art,
+#art2 {
+  height: 200px;
+  width: 200px;
+  background-color: var(--dark-bg);
+  border-radius: 50%;
+  position: fixed;
+  z-index: -1;
+}
+
+#art {
+  left: -100px;
+  top: -100px;
+}
+
+#art2 {
+  right: -100px;
+  bottom: 100px;
 }
